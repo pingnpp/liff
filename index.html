@@ -65,7 +65,7 @@
     }
 
     async function getFriendship() {
-      const friend = await liff.getFriendship
+      const friend = await liff.getFriendship()
       document.getElementById('friendship').append(friend.friendFlag)
       if (!friend.friendFlag) {
         if (confirm('add friendddd')) {
