@@ -65,10 +65,19 @@
     }
 
     async function getFriendship() {
+      const friend = await liff.getFriendship
+      document.getElementById('friendship').append(friend.friendFlag)
+      if (!friend.friendFlag) {
+        if (confirm('add friendddd')) {
+          window.location = 'https://line.me/R/ti/p/@806jnqag'
+        }
+      }
+      document.getElementById('scanCode').append()
+      document.getElementById('isLoggedIn').append()
     }
 
     async function sendMsg() {
-      if (liff.getContext().type != 'none'){
+      if (liff.getContext().type != 'none') {
         await liff.sendMessage([
           {
             'type': 'sticker',
@@ -95,9 +104,6 @@
       document.getElementById('displayName').append(profile.displayName)
       document.getElementById('statusMessage').append(profile.statusMessags)
       document.getElementById('decodedIDToken').append(liff.getDecodedIDToken().email)
-      // document.getElementById('friendship').append()
-      // document.getElementById('scanCode').append()
-      // document.getElementById('isLoggedIn').append()
       // document.getElementById('universalLink1').append()
       // document.getElementById('universalLink2').append()
     }
@@ -123,7 +129,7 @@
       getEnvironment()
       getUserProfile()
       getContext()
-      // getFriendship()
+      getFriendship()
       // createUniversalLink()
     }
     main()
