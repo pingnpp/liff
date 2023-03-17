@@ -59,6 +59,8 @@
     }
 
     async function scanCode() {
+      const result = await liff.scanCode()
+      document.getElementById('scanCode').append(result.value)
     }
 
     function openWindow() {
@@ -76,8 +78,8 @@
           window.location = 'https://line.me/R/ti/p/@806jnqag'
         }
       }
-      document.getElementById('scanCode').append()
-      document.getElementById('isLoggedIn').append()
+      
+      // document.getElementById('isLoggedIn').append()
     }
 
     async function sendMsg() {
