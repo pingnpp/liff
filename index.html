@@ -79,7 +79,7 @@
           window.location = 'https://line.me/R/ti/p/@806jnqag'
         }
       }
-      
+
       // document.getElementById('isLoggedIn').append()
     }
 
@@ -133,10 +133,13 @@
     async function main() {
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1660752261-ql4x9BVV" })
-      getEnvironment()
-      getUserProfile()
-      getContext()
-      getFriendship()
+      document.getElementById('isLoggedIn').append(liff.isLoggedIn())
+      if (liff.isLoggedIn()) {
+        getEnvironment()
+        getUserProfile()
+        getContext()
+        getFriendship()
+      }
       // createUniversalLink()
     }
     main()
