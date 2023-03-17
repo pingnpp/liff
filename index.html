@@ -74,6 +74,12 @@
     }
 
     async function getUserProfile() {
+      const profile = await liff.getProfile()
+      document.getElementById('pictureUrl').src = profile.pictureUrl
+      document.getElementById('userId').append(profile.userId)
+      document.getElementById('displayName').append(profile.displayName)
+      document.getElementById('statusMessage').append(profile.statusMessags)
+      // document.getElementById('decodedIDToken')
     }
 
     function getEnvironment() {
@@ -95,7 +101,7 @@
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1660752261-ql4x9BVV" })
       getEnvironment()
-      // getUserProfile()
+      getUserProfile()
       // getContext()
       // getFriendship()
       // createUniversalLink()
